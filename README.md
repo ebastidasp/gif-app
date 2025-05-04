@@ -1,27 +1,29 @@
 # GifApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.1.
+Este proyecto fue generado con Angular CLI versión 18.1.1.
 
-## Development server
+## Prerequisitons
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Asegúrate de tener instalado [Node.js](https://nodejs.org/). Luego, instala Angular CLI de forma global ejecutando:
 
-## Code scaffolding
+```bash
+npm install -g @angular/cli
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Pasos para ejecutar el frontend localmente
 
-## Build
+### 1. Instalar las librerías.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+npm install
+```
 
-## Running unit tests
+### 2. Correr el frontend con ng serve
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+ng serve --open
+```
 
-## Running end-to-end tests
+Nota: Es importante tener en cuenta que el frontend no cargará los datos si el servidor de .NET no está corriendo.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+También se puede ver que el acceso a la api está público, ya qne un ambiente de producción es mejor dejarlo oculto.
