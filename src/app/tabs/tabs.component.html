@@ -6,7 +6,7 @@
 
 <div *ngIf="!isLoading" class="p-20 h-100">
   <mat-tab-group (selectedTabChange)="onTabChange($event)" [(selectedIndex)]="selectedIndex">
-    <mat-tab label="First Tab">
+    <mat-tab label="Random Cat Gif and Fact">
       <div class="tab-content h-100">
         <div class="vertical-elements">
           <img *ngIf="gifUrl" [src]="gifUrl" alt="Cat GIF" class="gif-image" />
@@ -20,7 +20,7 @@
         </div>
       </div>
     </mat-tab>
-    <mat-tab label="Second Tab">
+    <mat-tab label="History Table of Gif Queries">
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
         <!-- ID Column -->
