@@ -26,4 +26,4 @@ ng serve --open
 
 Nota: Es importante tener en cuenta que el frontend no cargará los datos si el servidor de .NET no está corriendo.
 
-También se puede ver que el acceso a la api está público, ya qne un ambiente de producción es mejor dejarlo oculto.
+También se puede ver que el acceso a la api está público, ya que en un ambiente de producción es mejor dejarlo oculto.
