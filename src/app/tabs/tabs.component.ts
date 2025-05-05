@@ -10,7 +10,6 @@ import { MatTableDataSource } from '@angular/material/table';
 import { GifService } from '@services/gif.service';
 import { Fact } from '@models/fact.model';
 import { GifResponse } from '../models/gifresponse.model';
-import { coerceStringArray } from '@angular/cdk/coercion';
 
 @Component({
   selector: 'app-tabs',
@@ -33,7 +32,6 @@ export class TabsComponent {
   gifUrl: string = '';
   selectedIndex: number = 0;
 
-  // Table-related properties
   displayedColumns: string[] = ['id', 'query', 'gifUrl', 'fact', 'length', 'timestamp'];
   dataSource = new MatTableDataSource<any>([]);
   totalRecords = 0;
@@ -68,29 +66,24 @@ export class TabsComponent {
     });
   }
 
-  // Handle tab change
   onTabChange(event: MatTabChangeEvent) {
-    console.log(event);
-    if (event.index === 0) { // Second tab index
+    if (event.index === 0) {
       this.getCatFact();
     }
-    if (event.index === 1) { // Second tab index
+    if (event.index === 1) {
       this.loadHistory();
     }
   }
 
-  // Load history data for the table
   loadHistory() {
     this.isLoading = true;
     this.gifService.getHistory(this.pageIndex + 1, this.pageSize).subscribe(response => {
-      console.log(response);
       this.dataSource.data = response.items;
       this.totalRecords = response.totalItems;
       this.isLoading = false;
     });
   }
 
-  // Handle pagination
   onPageChange(event: PageEvent) {
     this.pageIndex = event.pageIndex;
     this.pageSize = event.pageSize;
